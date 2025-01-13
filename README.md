@@ -2,8 +2,6 @@
 
 A robust backend for the Task Management Application, built with Node.js, Express, and MongoDB.
 
-![Task Management App](https://source.unsplash.com/random/1200x630/?productivity,task)
-
 ## Features
 
 - ✨ RESTful API for task management
