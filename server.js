@@ -13,15 +13,7 @@ const PORT = process.env.PORT || 5000;
 // Middleware
 app.use(express.json());
 
-app.use(
-  cors({
-    origin: [
-      "http://localhost:5173",
-      "https://task-manager-app-frontend-xxbs.vercel.app"
-    ],
-    credentials: true,
-  })
-);
+app.use(cors());
 
 // Routes
 app.use('/api/tasks', taskRoutes);
