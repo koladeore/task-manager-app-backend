@@ -45,7 +45,7 @@ npm install
 PORT=5000```env
 MONGODB
 ```
-# start the frontend
+# start the backend
 npm run dev
 ```
 
