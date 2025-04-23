@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 import { connectDB } from "./lib/db.js";
 import taskRoutes from './routes/taskRoutes.js';
 import cors from "cors";
-import redis from './lib/redis.js';
+// import redis from './lib/redis.js';
 
 dotenv.config();
 
@@ -19,15 +19,15 @@ app.use(cors());
 // Routes
 app.use('/api/tasks', taskRoutes);
 
-app.get('/api/redis-test', async (req, res) => {
-  try {
-    await redis.set('test-key', 'Redis is working!', 'EX', 60); // 60 sec expiry
-    const value = await redis.get('test-key');
-    res.json({ message: value });
-  } catch (error) {
-    res.status(500).json({ error: 'Redis not working', details: error.message });
-  }
-});
+// app.get('/api/redis-test', async (req, res) => {
+//   try {
+//     await redis.set('test-key', 'Redis is working!', 'EX', 60); // 60 sec expiry
+//     const value = await redis.get('test-key');
+//     res.json({ message: value });
+//   } catch (error) {
+//     res.status(500).json({ error: 'Redis not working', details: error.message });
+//   }
+// });
 
 // Connect to MongoDB and start the server
 app.listen(PORT, () => {
